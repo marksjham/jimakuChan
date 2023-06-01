@@ -18,16 +18,11 @@
     <link rel="icon" href="./img/favicon2/favicon.ico" />
     <script src="js/bouyomichan_client.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RNP0LDER8"></script>
+    <!-- Google Tag Manager -->
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-5RNP0LDER8');
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WQZ3T2F');
     </script>
-    <!-- END: Google tag (gtag.js) -->
+    <!-- End Google Tag Manager -->
 
     <title>jimakuChan: Voice Recognition Subtitle-chan [CONFIG]</title>
 
@@ -104,6 +99,9 @@
  
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQZ3T2F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 <!-- # Operation example display screen ######################### -->
 <iframe src="" name="sample" width="100%" height="30%" id="asr_frame"></iframe>
@@ -274,7 +272,7 @@ translation language（１）：
 
 Font　：
 <select name="trans_text_font_selector" id="trans_text_font_selector" onchange="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text').style.fontFamily = this.value; selectFont();">
-    <option value="direct">[直接指定]</option>
+    <option value="direct">[Direct]</option>
     <option value="M PLUS\ 1p">M PLUS 1p</option>
     <option value="M PLUS Rounded\ 1c" selected>M PLUS Rounded 1c</option>
     <option value="Mamelon">マメロン</option>
