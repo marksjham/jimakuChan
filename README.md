@@ -1,12 +1,15 @@
+# Speech Recognition Subtitle
+originally created by [sayonari](https://github.com/sayonari)
+
 # jimakuChan
-音声認識字幕ちゃん  
-管理リポジトリです
+Voice Recognition Subtitle-chan
+Management repository
   
 ## Try it!
-以下で直接動かすことができます。  
+You can run it directly with:  
 https://sayonari.github.io/jimakuChan/
 
 ## USAGE
-設定方法などの紹介ページ  
+Introduction page such as setting method
 http://www.sayonari.com/trans_asr/index_asr.html
 

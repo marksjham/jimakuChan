@@ -1,17 +1,17 @@
 /**
- * 接続先
+ * access point
  */
  const HOST = 'localhost';
- const PORT = 50002;  // WebSocketサーバー経由
+ const PORT = 50002;  // Via WebSocket server
  
  /**
-  * コンストラクタ
+  * constructor
   */
  const BouyomiChanClient = function() {
  }
  
  /**
-  * 読み上げる
+  * read aloud
   */
  BouyomiChanClient.prototype.talk = function(cmntStr) {
      this.cmntStr = cmntStr;
@@ -25,21 +25,21 @@
  }
  
  /**
-  * WebSocketが接続した
+  * WebSocket connected
   */
  BouyomiChanClient.prototype.socket_onopen = function(e) {
      console.log("socket_onopen");
  
-     // 棒読みちゃんデータを生成
+     // Generate stick reader data
      let data = this.makeBouyomiChanDataToSend(this.cmntStr);
      console.log(data);
-     // 送信
+     // send
      this.socket.send(data.buffer);
  }
  
  
  /**
-  * WebSocketが接続に失敗した
+  * WebSocket failed to connect
   */
  BouyomiChanClient.prototype.socket_onerror = function(e) {
      console.log("socket_onerror");
@@ -48,36 +48,35 @@
  }
  
  /**
-  * WebSocketがクローズした
+  * WebSocket closed
   */
  BouyomiChanClient.prototype.socket_onclose = function(e) {
      console.log("socket_onclose");
  }
  
  /**
-  * WebSocketがデータを受信した
+  * WebSocket received data
   */
  BouyomiChanClient.prototype.socket_onmessage = function(e) {
      console.log("socket_onmessage");
      console.log(e.data);
  
-     // データ受信したら切断する
+     // Disconnect after receiving data
      this.socket.close();
  }
  
  
  /**
-  * 棒読みちゃんへ送信するデータの生成
+  * Generating data to send to Boyomi-chan
   */
  BouyomiChanClient.prototype.makeBouyomiChanDataToSend = function(cmntStr) {
-     let command = 0x0001; //[0-1]  (16Bit) コマンド          （ 0:メッセージ読み上げ）
-     let speed = -1; //[2-3]  (16Bit) 速度              （-1:棒読みちゃん画面上の設定）
-     let tone = -1; //[4-5]  (16Bit) 音程              （-1:棒読みちゃん画面上の設定）
-     let volume = -1; //[6-7]  (16Bit) 音量              （-1:棒読みちゃん画面上の設定）
-     let voice = 0; //[8-9]  (16Bit) 声質              （ 0:棒読みちゃん画面上の設定、1:女性1、2:女性2、3:男性1、4:男性2、5:中性、6:ロボット、7:機械1、8:機械2、10001～:SAPI5）
-     let code = 0; //[10]   ( 8Bit) 文字列の文字コード（ 0:UTF-8, 1:Unicode, 2:Shift-JIS）
-     let len = 0; //[11-14](32Bit) 文字列の長さ
- 
+     let command = 0x0001; //[0-1] (16Bit) command ( 0: Read message)
+     let speed = -1; //[2-3] (16Bit) speed (-1: setting on Boyomi-chan screen)
+     let tone = -1; //[4-5] (16Bit) Pitch (-1: Settings on Boyomi-chan screen)
+     let volume = -1; //[6-7] (16Bit) Volume (-1: Settings on the Boyomi-chan screen)
+     let voice = 0; //[8-9] (16Bit) Voice quality ( 0: Settings on the Boyomi-chan screen, 1: Female 1, 2: Female 2, 3: Male 1, 4: Male 2, 5: Neutral , 6: Robot, 7: Machine 1, 8: Machine 2, 10001~: SAPI5)
+     let code = 0; //[10] ( 8Bit) String character code (0: UTF-8, 1: Unicode, 2: Shift-JIS)
+     let len = 0; //[11-14](32Bit) string length 
      let cmntByteArray = stringToUtf8ByteArray(cmntStr);
  
      len = cmntByteArray.length;
@@ -108,7 +107,7 @@
  ///////////////////////////////////////////////////////////////////////////////////////
  // Util
  /**
-  * string --> UTF8 byteArray変換
+  * string --> UTF8 byteArray conversion
   */
  function stringToUtf8ByteArray(str) {
      let out = [], p = 0;
