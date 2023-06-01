@@ -173,7 +173,13 @@
         var count = 0;
 
         // Read text file from URL in list format -----------------------
-        const url = "https://raw.githubusercontent.com/sayonari/inappropriate-words-ja/master/Sexual.txt";
+        if(arg_recog == 'en') {
+            const url = "https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/blob/master/en";
+        } else if(arg_recog == 'ko') {
+            const url = "https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/blob/master/ko";
+        } else {
+            const url = "https://raw.githubusercontent.com/sayonari/inappropriate-words-ja/master/Sexual.txt";
+        }
         var sexual_words = [];
 
         if(anti_sexual != 'false') {

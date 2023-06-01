@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hachi+Maru+Pop" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yusei+Magic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Reggae+One" rel="stylesheet">
@@ -48,7 +48,7 @@
             height: 100%;
             width: 100%;
             margin: 0;
-            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             /* font-family:'07NikumaruFont'; */
         }
         table {
@@ -63,6 +63,10 @@
         table td {
             /*word-break: break-all;*/
             overflow-wrap : break-word;
+        }
+
+        #settings {
+            padding: 10px;
         }
     </style>
 
@@ -106,6 +110,7 @@
 <!-- # Operation example display screen ######################### -->
 <iframe src="" name="sample" width="100%" height="30%" id="asr_frame"></iframe>
 
+<div id="settings">
 <!-- # API key text box ##################### -->
 Google Script API-KEY: <input type="text" name="gas_key" id="gas_key" size="60" oninput="updateOptionValues();" /><BR>
     ↑If you enter the KEY here, the translation result will also appear. Click here for how to create a key：<a target="_blank" href="http://www.sayonari.com/trans_asr/index_asr.html">http://www.sayonari.com/trans_asr/index_asr.html</a><BR>
@@ -388,7 +393,8 @@ URL : <textarea name="url" id="url" rows="7" cols="90"></textarea><BR>
 　　　<input type="button" value="copy to clipboard" id="textarea_copy" onclick="document.getElementsByTagName('textarea')[0].select();document.execCommand('copy');">
 　<a id="open_link" target="_blank" href="">[open in new window]</a><BR>
 <BR><BR><BR><BR>
-テスト中<BR>
+in test<BR>
+</div>
 </body>
 
 
