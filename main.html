@@ -18,18 +18,6 @@
     <link rel="icon" href="./img/favicon2/favicon.ico" />
     <script src="js/bouyomichan_client.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKQVD3TMXH"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-FKQVD3TMXH');
-    </script>
-    <!-- END: Google tag (gtag.js) -->
-
-
     <title>jimakuChan：Voice Recognition Subtitle-chan</title>
 
     <style type="text/css">
@@ -174,11 +162,11 @@
         var url = "";
         // Read text file from URL in list format -----------------------
         if(arg_recog == 'en') {
-            url = "https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/blob/master/en";
+            url = "word/en";
         } else if(arg_recog == 'ko') {
-            url = "https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/blob/master/ko";
+            url = "word/ko";
         } else {
-            url = "https://raw.githubusercontent.com/sayonari/inappropriate-words-ja/master/Sexual.txt";
+            url = "word/ja";
         }
         var sexual_words = [];
 
